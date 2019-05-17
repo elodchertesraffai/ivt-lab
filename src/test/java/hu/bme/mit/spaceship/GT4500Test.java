@@ -8,11 +8,13 @@ import static org.mockito.Mockito.*;
 
 public class GT4500Test {
 
+  private TorpedoStore MockTs;
   private GT4500 ship;
 
   @BeforeEach
   public void init(){
-    this.ship = new GT4500();
+	MockTs=mock(TorpedoStore.class);
+    this.ship = new GT4500(MockTs, MockTs);
   }
 
   @Test
